@@ -6,7 +6,7 @@ import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 
 const Navbar = () => {
-	const { ColorMode, toggleColorMode } = useColorMode();
+	const { colorMode, toggleColorMode } = useColorMode();
 
 	return (
 		<Container maxW={"1140px"} px={4}>
@@ -20,15 +20,17 @@ const Navbar = () => {
 				}}
 			>
 				<Text
-					fontSize={{ base: "22",
-						 sm: "28" }}
+					fontSize={{
+						base: "22",
+						sm: "28"
+					}}
 					fontWeight={"bold"}
 					textTransform={"uppercase"}
 					textAlign={"center"}
 					bgGradient={"linear(to-r, cyan.400, blue.500)"}
 					bgClip={"text"}
 				>
-					   <Link to={"/"}>Go DevOps&apos;y - Store 🛒</Link>
+					<Link to={"/"}>Go DevOps&apos;y - Store 🛒</Link>
 				</Text>
 
 				<HStack spacing={2} alignItems={"center"}>
@@ -38,7 +40,7 @@ const Navbar = () => {
 						</Button>
 					</Link>
 					<Button onClick={toggleColorMode}>
-						{ColorMode === "light" ? <IoMoon /> : <LuSun size='20' />}
+						{colorMode === "light" ? <IoMoon /> : <LuSun size='20' />}
 					</Button>
 				</HStack>
 			</Flex>
